@@ -48,6 +48,9 @@ public class Line {
     }
 
     public double getK() {
+        if (stepX() < near){
+            throw new IllegalArgumentException("Прямая вертикальная, нет коэффициента k")
+        }
         return stepY() / stepX();
     }
 
